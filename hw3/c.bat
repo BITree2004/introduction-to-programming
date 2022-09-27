@@ -1,0 +1,1 @@
+java -ea -jar ReverseTest.jar Base Sum Avg
