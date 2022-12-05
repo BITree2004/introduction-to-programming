@@ -1,12 +1,10 @@
-
 import java.util.Arrays;
 
-
-public class IntList {
+public class PairList {
     private int sz = 0;
-    private int[] arr = new int[1];
+    private Pair[] arr = new Pair[1];
  
-    IntList() {
+    PairList() {
     
     }
     
@@ -19,25 +17,26 @@ public class IntList {
         return sz;
     }
 
-    void add(int x) {
+    void add(int x, String y) {
         if (sz == arr.length) {
             resize();
         }
-        arr[sz++] = x;
+        arr[sz++] = new Pair(x, y);
     }
 
-    int get(int i) throws IndexOutOfBoundsException {
+
+    Pair get(int i) throws IndexOutOfBoundsException {
         if (i < 0 || i >= sz) {
             throw new IndexOutOfBoundsException("index is out of range");
         }
         return arr[i];
     }
 
-    void change(int i, int x) {
+    void change(int i, int x, String y) {
         if (i < 0 || i >= sz) {
             return;
         }
-        arr[i] = x;
+        arr[i] = new Pair(x, y);
     }
 
     void clearMemory() {
